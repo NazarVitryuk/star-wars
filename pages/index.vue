@@ -21,7 +21,6 @@
 <script>
 import Header from '../components/Header'
 
-
 export default {
   components: {
     Header
@@ -39,7 +38,7 @@ export default {
   }
   .logo-link a {
     text-decoration: none;
-     color: deepskyblue;
+    color: deepskyblue;
   }
   .logo-link:hover {
     border-bottom: 2px solid yellow; 

@@ -16,18 +16,18 @@
     </div>
     <div v-if="searchText == ''" class="row my-5 pagi_wrapper">
       <div class="col-12 d-flex justify-content-center">
-          <button 
-            class="pagi_btn"
-            v-bind:class="{'active':(i == activeButton)}"
-            v-for="(p, i) in pagination.pages"
-            :data-id="i"
-            @click.prevent="setPage(p)"
-            @click="setActiveButton(i)"
-            :key="p">
-            {{ p }}
-          </button>
+        <button 
+          class="pagi_btn"
+          v-bind:class="{'active':(i == activeButton)}"
+          v-for="(p, i) in pagination.pages"
+          :data-id="i"
+          @click.prevent="setPage(p)"
+          @click="setActiveButton(i)"
+          :key="p">
+        {{ p }}
+        </button>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -49,6 +49,7 @@ components: {
       activeButton: 0,
     }
   },
+  // Fetching films from API
   async asyncData() {
     const res = await fetch('https://swapi.co/api/films/')
     const films = await res.json()
@@ -56,24 +57,29 @@ components: {
       films: films.results
     }
   },
+  // Return films array for pagination
   computed: {
       collection() {
         return this.searchText !== '' ? this.onFilmSearch() : this.paginate(this.films)
       }
   },
   methods: {
+    // Return array of films after search 
     onFilmSearch() {
       return this.films.filter(film => film.title.toLowerCase().indexOf(this.searchText) >= 0)
     },
     setActiveButton(i) {
       this.activeButton = i;
     },
+    // set current pagination page
     setPage(p) {
       this.pagination = this.paginator(this.films.length, p)
     },
+    // helper for pagination
     paginate(data) {
       return _.slice(data, this.pagination.startIndex, this.pagination.endIndex + 1)
     },
+    // helper for pagination
     paginator(totalItems, currentPage) {
       var startIndex = (currentPage - 1) * this.perPage,
       endIndex = Math.min(startIndex + this.perPage - 1, totalItems - 1);

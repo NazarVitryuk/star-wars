@@ -40,8 +40,13 @@ export default {
         width: 190px;
         height: 30px;
     }
-    .link {
+    .link a {
         color: deepskyblue;
-        font-size: 20px;
+        font-size: 25px;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+    }
+    .link a:hover {
+        border-bottom: 2px solid yellow;
     }
 </style>

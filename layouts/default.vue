@@ -23,8 +23,6 @@ export default {
     font-family: 'Amiri', serif;
     margin: 0;
     background: #151515;
-    /* background: url('/images/sky.jpg') center center fixed; */
-    background-repeat: no-repeat;
   }
   .no-focus-outline a:focus,
   .no-focus-outline button:focus {
