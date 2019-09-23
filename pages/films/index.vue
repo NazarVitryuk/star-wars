@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid">
     <Header />
-    <div class="row">
-      <div class="col d-flex justify-content-center film_search">
+    <div class="row justify-content-center">
+      <div class="col-8 d-flex  film_search">
         <input type="text" v-model="searchText" @input="onFilmSearch" placeholder="Search" />
       </div>
     </div>
@@ -10,13 +10,13 @@
       <Film
         v-if="item.title.toLowerCase().indexOf(searchText.toLowerCase()) >= 0"
         :id="item.episode_id"
-        :url="item.url" 
-        :title="item.title" 
+        :url="item.url"
+        :title="item.title"
         :text="item.opening_crawl"></Film>
     </div>
     <div v-if="searchText == ''" class="row my-5 pagi_wrapper">
       <div class="col-12 d-flex justify-content-center">
-        <button 
+        <button
           class="pagi_btn"
           v-bind:class="{'active':(i == activeButton)}"
           v-for="(p, i) in pagination.pages"
@@ -64,9 +64,9 @@ components: {
       }
   },
   methods: {
-    // Return array of films after search 
+    // Return array of films after search
     onFilmSearch() {
-      return this.films.filter(film => film.title.toLowerCase().indexOf(this.searchText) >= 0)
+      return this.films.filter(film => film.title.toLowerCase().indexOf(this.searchText.toLowerCase()) >= 0)
     },
     setActiveButton(i) {
       this.activeButton = i;
@@ -90,7 +90,7 @@ components: {
         endIndex: endIndex,
         pages: _.range(1, Math.ceil(totalItems / this.perPage) + 1)
       };
-    } 
+    }
   },
   created() {
     this.setPage(1)
@@ -121,5 +121,6 @@ components: {
     color: white;
     border-radius: 5px;
     outline: none;
+    width: 100%;
   }
 </style>

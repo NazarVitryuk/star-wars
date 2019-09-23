@@ -1,9 +1,13 @@
 <template>
     <div class="row justify-content-center pt-4">
         <div class="col-9 film">
-            <div class="row p-4">
-                <div class="col-7">
-                    <h3>{{ title }}</h3>
+            <div class="row p-3">
+              <div class="col-12 text-center">
+                <h3>{{ title }}</h3>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-7 pl-5">
                     <p>{{ text }}</p>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center poster">
@@ -11,7 +15,7 @@
                         <img class="img-fluid" :src="`images/${id}.jpg`" />
                     </a>
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="col-12 my-3 d-flex align-items-center justify-content-center">
                     <button @click="infoPage" class="btn-custom">More Info</button>
                 </div>
             </div>

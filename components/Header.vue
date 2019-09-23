@@ -1,18 +1,17 @@
 <template>
     <div class="row header">
-        <div class="col-auto logo">
+        <div class="col-12 col-md-auto logo">
             <nuxt-link class="d-flex flex-column align-items-center" to="/">
                 <img src="/images/sw_logo_horiz-04368052e188.png" />
                 <p class="mb-0">Films Info</p>
             </nuxt-link>
         </div>
-        <div class="col-auto link d-flex align-items-center ml-auto">
+        <div class="col-6 col-md-auto justify-content-center link d-flex align-items-center ml-md-auto">
             <nuxt-link to="/">Home</nuxt-link>
         </div>
-        <div class="col-auto link d-flex align-items-center">
+        <div class="col-6 col-md-auto justify-content-center link d-flex align-items-center">
             <nuxt-link to="/films">Films List</nuxt-link>
         </div>
-        <div class="col-1"></div>
     </div>
 </template>
 

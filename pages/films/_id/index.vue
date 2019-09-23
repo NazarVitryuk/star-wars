@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="row film_content mb-5">
-      <div class="col-4 d-flex justify-content-center film_image">
+      <div class="col-12 col-xl-4 d-flex justify-content-center film_image">
         <img class="img-fluid" :src="`/images/${ filmData.episode_id }.jpg`" />
       </div>
-      <div class="col-7">
+      <div class="col-12 col-xl-7 mt-4 mt-xl-0">
         <span class="film_info">Title:</span>
         <span>{{ filmData.title }}</span>
         <br />
